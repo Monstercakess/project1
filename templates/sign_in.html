@@ -6,14 +6,10 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-  <form class="form-group">
-    <h3>Please sign in</h3>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div class="checkbox">
-      <input id="inputRememberMe" type="checkbox" value="remember-me">Remember me
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_in">Sign In</button>
+  <form method="post" class="form-group">
+    <div>{{ form.username.label }}: {{ form.username(class='form-control') }}</div>
+    <div>{{ form.password.label }}: {{ form.password(class='form-control') }}</div>
+    <button id="button_form" class="btn btn-lg btn-basic btn-block" type="submit" name="sign_in">Sign In</button>
   </form>
 </div>
 {% endblock %}

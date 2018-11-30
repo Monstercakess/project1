@@ -1,18 +1,17 @@
 {% extends "layout.html" %}
-{% block title %} Sign Up {% endblock %}
+{% block title %} Sign up {% endblock %}
 {% block head %}
 {{ super() }}
 <link type="text/css" href="static/styles/login_form.css" rel="stylesheet">
 {% endblock %}
 {% block content %}
 <div class="container">
-  <form class="form-group">
-    <h3>Please sign Up</h3>
-    <input type="text" id="inputName" class="form-control" placeholder="Name" required autofocus>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <input type="password" id="inputPassword2" class="form-control" placeholder="Retype Password" required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" name="sign_up">Sign Up</button>
+  <form method="post" class="form-group">
+    <div>{{ form.username.label }}: {{ form.username(class='form-control') }}</div>
+    <div>{{ form.email.label }}: {{ form.email(class='form-control') }}</div>
+    <div>{{ form.password.label }}: {{ form.password(class='form-control') }}</div>
+    <div>{{ form.confirm.label }}: {{ form.confirm(class='form-control') }}</div>
+    <button id="button_form" class="btn btn-lg btn-basic btn-block" type="submit" name="sign_up">Sign up</button>
   </form>
 </div>
 {% endblock %}

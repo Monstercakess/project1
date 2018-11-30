@@ -7,8 +7,8 @@
       {% endblock %}
     </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     {% endblock %}
   </head>
   <body>
@@ -24,8 +24,12 @@
           <li><a href="">Reviews</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <button onclick="sign_in.html" class="btn btn-default navbar-btn" type="button" name="sign_in">Sign In</button>
-          <button onclick="sign_up.html" class="btn btn-default navbar-btn" type="button" name="sign_up">Sign Up</button>
+          {% if session['logged_in'] == True %}
+            <li><a href="sign_out">Sign Out</a></li>
+          {% else %}
+            <li><a href="sign_in">Sign In</a></li>
+            <li><a href="sign_up">Sign Up</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>

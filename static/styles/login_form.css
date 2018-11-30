@@ -9,6 +9,10 @@
   font-size: 16px;
 }
 
-#inputPassword2 {
+#confirm {
 margin-bottom: 20px;
+}
+
+#button_form:hover{
+  background-color: #afafaf;
 }
